@@ -45,13 +45,13 @@
 
                 systemd.services.gtrackmap = {
                   wantedBy = [ "multi-user.target" ];
-                  script = "${trackmap}/bin/gtrackmap";
                   environment = {
                     GTRACKMAP_PORT = toString cfg.port;
                   };
                   serviceConfig = {
                     User = config.users.users.gtrackmap.name;
                     Group = config.users.groups.gtrackmap.name;
+                    ExecStart = "${trackmap}/bin/gtrackmap";
                   };
                 };
               };
