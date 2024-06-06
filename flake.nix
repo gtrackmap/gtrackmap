@@ -36,7 +36,10 @@
 
               config = lib.mkIf cfg.enable {
                 users = {
-                  users.gtrackmap.isSystemUser = true;
+                  users.gtrackmap = {
+                    isSystemUser = true;
+                    group = config.users.groups.gtrackmap.name;
+                  };
                   groups.gtrackmap = { };
                 };
 
