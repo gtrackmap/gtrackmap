@@ -1,19 +1,20 @@
-name: trackmap-cli
+name: gtrackmap
 version: 0.1.0
 
 authors:
   - Joakim Repomaa <mail@j.repomaa.com>
 
 targets:
-  trackmap-cli:
-    main: src/trackmap-cli.cr
+  gtrackmap:
+    main: src/gtrackmap.cr
 
 dependencies:
-  athena-console:
-    github: athena-framework/console
+  athena:
+    github: athena-framework/framework
+    version: ~> 0.19.0
   baked_file_system:
     github: schovi/baked_file_system
 
-crystal: 1.2.2
+crystal: 1.9.2
 
 license: MIT

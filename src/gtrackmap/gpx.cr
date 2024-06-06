@@ -1,6 +1,6 @@
 require "xml"
 
-module Trackmap
+module GTrackmap
   class GPX
     NS = "http://www.topografix.com/GPX/1/1"
 

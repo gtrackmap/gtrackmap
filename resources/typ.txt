@@ -1,0 +1,88 @@
+; THIS FILE WAS CREATED BY DECOMPILER v1.162 AT http://ati.land.cz/gps/typdecomp AND IT MAY NOT
+; EXACTLY CORRESPOND TO ORIGINAL .TYP FILE.
+; SOME ELEMENTS MAY BE MISSING FROM THIS FILE, AND OTHERS MAY BE INCOMPLETE!
+; 
+; IF YOU USE THIS FILE AS SOURCE FOR cGPSmapper, IT WILL ALMOST CERTAINLY NOT PRODUCE WHAT YOU WANT.
+; 
+; IF YOU WANT JUST TO CHANGE SOMETHING, USE TYP EDITOR AT http://ati.land.cz/gps/typedit
+; Original TYP was created 4.7.2013 at 08:23:44, probably with Garmin MPC
+; Text codepage=1252
+; Version=1
+
+; Header length: 0x005b bytes, header format: OLD
+; Header dump:
+;  draworder:                                        info@0x002011-0x002088 (elem_size=5, #elements=24)
+;    polygon: data@0x00005b-0x00093a (len=0x0008e0), info@0x00093b-0x00098e (elem_size=4, #elements=21)
+;      point: data@0x000cbb-0x001f74 (len=0x0012ba), info@0x001f75-0x002010 (elem_size=4, #elements=39)
+;       line: data@0x00098f-0x000c6e (len=0x0002e0), info@0x000c6f-0x000cba (elem_size=4, #elements=19)
+;   NT1point: data@0x000000-0x000000 (len=0x000000), info@0x000000-0x000000 (elem_size=0, #elements=0)
+
+[_id]
+ProductCode=0x1
+FID=9999
+[end]
+
+[_drawOrder]
+[end]
+
+; --------------------------------------------------------------------------
+; start of line collection
+; --------------------------------------------------------------------------
+[_line]
+Type=0x007
+UseOrientation=Y
+XPM="0 0 2 2",
+"XX  c #ffffff",
+"==  c #000000",
+LineWidth=2
+BorderWidth=1
+String1=0x04,Street
+String2=0x02,Strasse
+[end]
+
+[_line]
+; Originally @(0x00098f+0x00002b)=0x0009ba
+Type=0x00a
+UseOrientation=Y
+XPM="32 2 2 2",
+"==  c #ffffff",
+"XX  c #000000",
+"XXXXXX==XXXXXX==XXXXXX==XXXXXX==XXXXXX==XXXXXX==XXXXXX==XXXXXX==",
+"XXXXXX==XXXXXX==XXXXXX==XXXXXX==XXXXXX==XXXXXX==XXXXXX==XXXXXX=="
+};
+String1=0x04,Way
+String2=0x02,Weg
+[end]
+
+[_line]
+; Originally @(0x00098f+0x00004a)=0x0009d9
+Type=0x00b
+UseOrientation=Y
+XPM="0 0 2 2",
+"XX  c #ffffff",
+"==  c #000000",
+LineWidth=1
+BorderWidth=1
+String1=0x04,Way
+String2=0x02,Weg
+[end]
+
+[_line]
+; Originally @(0x00098f+0x00007e)=0x000a0d
+Type=0x011
+UseOrientation=Y
+XPM="32 1 2 2",
+"==  c #000000",
+"XX  c #ffffff",
+"==XXXX==XXXX==XXXX==XXXX==XXXX==XXXX==XXXX==XXXX==XXXX==XXXX==XX"
+};
+String1=0x04,Trail with difficulties
+String2=0x02,Weg mit Schwierigkeiten
+[end]
+
+
+
+; --------------------------------------------------------------------------
+; start of point collection
+; --------------------------------------------------------------------------
+
