@@ -26,6 +26,11 @@
               options = {
                 services.gtrackmap = {
                   enable = lib.mkEnableOption "Enable gtrackmap";
+                  port = lib.mkOption {
+                    type = lib.types.int;
+                    default = 3000;
+                    description = "Port to serve the webapp on";
+                  };
                 };
               };
 
@@ -38,6 +43,9 @@
                 systemd.services.gtrackmap = {
                   wantedBy = [ "multi-user.target" ];
                   execStart = "${trackmap}/bin/gtrackmap";
+                  environment = {
+                    GTRACKMAP_PORT = toString cfg.port;
+                  };
                   serviceConfig = {
                     User = config.users.users.gtrackmap.name;
                     Group = config.users.groups.gtrackmap.name;
