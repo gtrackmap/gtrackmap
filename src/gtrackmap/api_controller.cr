@@ -50,10 +50,14 @@ class GTrackmap::APIController < ATH::Controller
       end
     end
 
-    track_data = parse_tracks(tracks, radius)
-    query = build_osm_query(track_data, radius)
+    begin
+      track_data = parse_tracks(tracks, radius)
+      query = build_osm_query(track_data, radius)
 
-    ATH::Response.new(query, headers: HTTP::Headers{"content-type" => "text/plain"})
+      ATH::Response.new(query, headers: HTTP::Headers{"content-type" => "text/plain"})
+    ensure
+      tracks.each { |track| File.delete(track) }
+    end
   end
 
   @[ARTA::Post("/api/build-map")]
