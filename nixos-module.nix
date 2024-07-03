@@ -1,7 +1,7 @@
-{ self' }:
-{ lib, config, ... }:
+{ self }:
+{ lib, config, pkgs, ... }:
 let
-  trackmap = self'.packages.default;
+  trackmap = self.packages.${pkgs.system}.default;
   cfg = config.services.gtrackmap;
 in
 {
