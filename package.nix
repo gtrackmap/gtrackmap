@@ -1,9 +1,7 @@
-{ frontend }:
-{ ... }:
-{
-  perSystem = { system, pkgs, lib, ... }:
+{ ... }: {
+  perSystem = { pkgs, inputs', lib, ... }:
     let
-      frontendBuild = frontend.packages.${system}.default;
+      frontendBuild = inputs'.frontend.packages.default;
       inherit (pkgs) crystal openssl llvmPackages makeWrapper;
     in
     {

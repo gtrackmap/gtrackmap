@@ -4,4 +4,4 @@
 /.shards/
 /frontend
 *.dwarf
-/result/
+/result

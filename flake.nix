@@ -4,17 +4,12 @@
     frontend.url = "github:gtrackmap/frontend";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
-  outputs = { flake-parts, frontend, nixpkgs, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } ({ flake-parts-lib, self, moduleWithSystem, ... }:
-      let
-        inherit (flake-parts-lib) importApply;
-        package = importApply ./flake-module.nix { inherit frontend; };
-        module = importApply ./nixos-module.nix { inherit self; };
-      in
-      {
-        imports = [ package ];
-        flake.nixosModules.default = module;
-        systems = nixpkgs.legacyPackages.x86_64-linux.lib.systems.flakeExposed;
-      }
-    );
+  outputs = { self, flake-parts, ... }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs self; } {
+      systems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
+      imports = [
+        ./package.nix
+        ./nixos-module.nix
+      ];
+    };
 }
